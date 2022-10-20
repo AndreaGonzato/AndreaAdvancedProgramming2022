@@ -68,3 +68,21 @@ First, you need to include the header <fstream>
 ### How do you open a file in append mode?
 If you don't want to overwrite an existing file, use:
 filevar.open("test.txt", std::ios_base::app);
+
+## Lecture 4    
+### what's the main advantage of using templates?
+
+### why do people usually put definitions of templated functions directly into `.hpp` files?
+        
+### except on types, what else can we template on?
+        
+### what is template specialization?
+        
+### what is a variadic template?
+        
+### why using `push_back` for `std::vector` is a bad idea?
+        
+### how do you pass data from `std::vector` to a "C-style" function that needs a pointer?
+        
+### why you shouldn't use a "vector of vectors"?
+        
