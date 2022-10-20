@@ -2,6 +2,11 @@
 #include "../include/complex.hpp"
 
 void hello(){
-     std::cout<<"Hello, World3!"<<std::endl;
+     std::cout<<"Hello, World5!"<<std::endl;
+}
+
+void Complex::print(){
+     std::cout<< real << " i "<< imaginary <<std::endl;
 }
  
+
