@@ -2,11 +2,8 @@
 #include "complex.hpp"
 
 int main(){
-    hello();
-    Complex c;
-    c.real = 5;
-    c.imaginary = 8;
+    Complex c = Complex(3, 6);
     c.print();
-    
+
     return 0;
 }
