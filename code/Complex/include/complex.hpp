@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COMPLEX_H
+#define COMPLEX_H
 
 void hello();
 
@@ -7,3 +8,5 @@ class Complex{
         int real, imaginary;
         void print();
 };
+
+#endif
