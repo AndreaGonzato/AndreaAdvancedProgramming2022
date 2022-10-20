@@ -48,8 +48,10 @@ Yes they can’t be repleced by spaces.
 ### What does `$^` mean in a `Makefile`?
 `$^` evaluates to filenames of all the prerequisites, separated by spaces.
 Here is an example:
+```
 obj/%.o: src/%.cpp  
         $(CC) $(CFLAGS) $^ -o $@
+```
         
 ### How to use `make` with a makefile that is not named `Makefile`?
 Ypu need to pass to make some oprion like `make—file=MyMakefileName`
