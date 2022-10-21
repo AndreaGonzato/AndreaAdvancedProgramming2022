@@ -13,5 +13,3 @@ main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
 complex.o: src/hello.cpp
 	$(CC) $(CFLAGS) src/complex.cpp
-clean:
-	rm -rf *.o *.x 
