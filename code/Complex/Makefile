@@ -11,5 +11,5 @@ main.x: main.o src/complex.o
 	$(CC) -o main.x main.o src/complex.o 
 main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
-complex.o: src/hello.cpp
+complex.o: src/complex.cpp
 	$(CC) $(CFLAGS) src/complex.cpp
