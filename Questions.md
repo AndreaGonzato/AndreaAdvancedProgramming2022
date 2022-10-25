@@ -100,8 +100,11 @@ myPrint('c', 1.4, 9,0, "kjhkjhkjh");
  ```
         
 ### why using `push_back` for `std::vector` is a bad idea?
+Because iy you use it many time, there are many possible reallocation of the size of the vector that is an operation that need to be avoided.
         
 ### how do you pass data from `std::vector` to a "C-style" function that needs a pointer?
+You can use: `&myvec[0]` or `myvec.data()`
         
 ### why you shouldn't use a "vector of vectors"?
+Because you want to be contiguous in memory.
         
