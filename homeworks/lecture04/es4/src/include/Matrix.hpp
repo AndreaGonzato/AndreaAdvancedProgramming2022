@@ -4,7 +4,7 @@
 
 template <typename T>
 class Matrix{
-    
+
     private:
         std::vector<T> elements;
         int N;
@@ -55,7 +55,6 @@ class Matrix{
                 
             }
             
-
             return result;
             
         };
@@ -63,8 +62,13 @@ class Matrix{
         void print_to_file(std::string filename){
             std::ofstream outputfile(filename);
             
-            for(int i = 0 ; i < N*N ; i++){
-                outputfile << elements[i] << " ";
+            outputfile << N << std::endl;
+            for(int i = 0 ; i < N ; i++){
+                for (int j = 0; j < N; j++){
+                    outputfile << elements[i*N + j] << " ";
+                }
+                outputfile << std::endl;
+                
             }
 
         };
