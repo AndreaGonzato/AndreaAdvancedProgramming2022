@@ -1,14 +1,17 @@
 #include <iostream>
 #include <cmath>
 
-struct mystruct{
-private:
-  int a;
-  int b;
-}
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+class CMyClass{
+    public:
+        int a;
+        CMyClass(int x):a(x){};
+};
+
 int main(){
-  mystruct S;
-  S.a=8;
-  S.b=7;
-  return 0;
+    int x=4;
+    int& y;
+
+    return 0;
 }
