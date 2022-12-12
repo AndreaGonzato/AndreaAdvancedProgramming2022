@@ -36,4 +36,108 @@ You can use: `&myvec[0]` or `myvec.data()`
         
 ### why you shouldn't use a "vector of vectors"?
 Because you want to be contiguous in memory.
-        
+
+
+# All the code snippets below have mistakes, find them:
+
+
+## Snippet 1:
+```
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+template <typename T>
+class CMyClass{
+  T a;
+  T b;
+}
+
+int main(){
+  CMyClass var;
+ ...
+}
+```
+You need to specify the type of the template. If you choose to use int you need to write in the main:
+```
+CMyClass<int> var;
+```
+
+## Snippet 2:
+```
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+template <typename T, double S>
+void add_number(T& var){
+    T=T+S;
+}
+```
+
+Here the type of the template are used as variable.
+The correct version is:
+```
+template <typename T, typename S>
+T add_number(T var, S add){
+    return var+add;
+
+}
+```
+
+## Snippet 3:
+```
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+template <typename... Types>
+void myPrint(const Types&... args){
+    std::cout<<arg<<" ";
+    myPrint(args...);
+}
+```
+Args is a group of parameters
+
+The correct version is:
+```
+template <typename T, typename... Types>
+void myPrint(const T& arg, const Types&... args){
+    std::cout<<arg<<" ";
+    myPrint(args...);
+}
+
+```
+
+## Snippet 4:
+
+```
+//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
+template <typename T>
+void print(const T& var){
+  std::cout<<var<<std::end;
+}
+
+struct MyClass{
+  int a;
+  int b;
+}
+
+int main(){
+ MyClass var;
+ print(var);
+}
+
+```
+
+`var` of `MyClass` is only declared but not init. To solve that in the main use the line:
+```
+MyClass var = MyClass();
+```
+To properly print MyClass you need to define the operator <<. To do that the best way is to define a friend in the class
+
+```
+struct MyClass{
+  int a;
+  int b;
+  friend std::ostream& operator<<(std::ostream& os, const MyClass& mc);
+};
+
+std::ostream& operator<<(std::ostream& os, const MyClass& mc)
+{
+    os <<"a: " <<mc.a << " b: " << mc.b;
+    return os;
+}
+```
+
