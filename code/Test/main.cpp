@@ -1,17 +1,30 @@
 #include <iostream>
-#include <cmath>
+using namespace std;
 
-//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
-//BAD CODE AHEAD, DO NOT COPY BY ACCIDENT!
-class CMyClass{
-    public:
-        int a;
-        CMyClass(int x):a(x){};
+class Base {
+public:
+	// user wants to override this in
+	// the derived class
+	virtual void func() { cout << "I am in base" << endl; }
 };
 
-int main(){
-    int x=4;
-    int& y;
+class derived : public Base {
+public:
+	// did a silly mistake by putting
+	// an argument "int a"
+	void func(int a)
+	{
+		cout << "I am in derived class" << endl;
+	}
+};
 
-    return 0;
+// Driver code
+int main()
+{
+	Base b;
+	derived d;
+	cout << "Compiled successfully" << endl;
+  	b.func();
+  	d.func(3);
+	return 0;
 }
