@@ -15,7 +15,7 @@ template <typename T>
 class List
 {
 private:
-    Node<T> *getINode(int index);
+    Node<T> *getINode(int index) const;
     Node<T> *head = nullptr;
     Node<T> *tail = nullptr;
     int size = 0;
@@ -24,16 +24,16 @@ public:
     List(Node<T> *firstNode);
     List(T firstValue);
     List();
-    List(List &l1);
+    List(const List &l1);
     ~List();
 
     void push(const T newVal);
     void replaceIElement(int index, const T newVal);
-    T getIElement(int index);
+    T getIElement(int index) const;
     void loadFromFile(std::string fileName);
     T remove();
-    void print();
-    int getSize() { return size; };
+    void print() const;
+    int getSize() const { return size; };
 };
 
 template <typename T>
@@ -57,7 +57,7 @@ List<T>::List(T firstValue)
 
 // copy constructor
 template <typename T>
-List<T>::List(List<T> &l1)
+List<T>::List(const List<T> &l1)
 {
     if (l1.size == 0)
     {
@@ -138,7 +138,7 @@ void List<T>::replaceIElement(int index, const T newVal)
 }
 
 template <typename T>
-void List<T>::print()
+void List<T>::print() const
 {
     if (head == nullptr)
     {
@@ -160,7 +160,7 @@ void List<T>::print()
 }
 
 template <typename T>
-Node<T> *List<T>::getINode(int index)
+Node<T> *List<T>::getINode(int index) const
 {
     Node<T> *nodeI = head;
 
@@ -173,7 +173,7 @@ Node<T> *List<T>::getINode(int index)
 }
 
 template <typename T>
-T List<T>::getIElement(int index)
+T List<T>::getIElement(int index) const
 {
     return getINode(index)->value;
 }
