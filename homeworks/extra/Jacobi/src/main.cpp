@@ -10,7 +10,7 @@ void init(Matrix<T> matrix){
 
 int main()
 {
-	Matrix<double> matrix = Matrix<double>(11);
+	Matrix<double> matrix = Matrix<double>(13);
 	matrix.init();
 	matrix.print_to_file("first");
 	

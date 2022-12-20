@@ -13,7 +13,7 @@ private:
     int N = 0;
     std::unique_ptr<T[]> elements;
 
-    int static const STEP = 10;
+    double static constexpr MAX_VALUE = 100;
 
 public:
     Matrix(){};
@@ -92,11 +92,12 @@ void Matrix<T>::setBorders(){
     }
 
     // fill the last row
-    int counter = Matrix::STEP * (N - 1);
+    double counter = Matrix::MAX_VALUE;
+    double step = Matrix::MAX_VALUE / (N-1);
     for (int i = N * N - N; i < N * N; i++)
     {
         elements[i] = counter;
-        counter -= Matrix::STEP;
+        counter -= step;
     }
 
     // fill the last column
@@ -110,7 +111,7 @@ void Matrix<T>::setBorders(){
     for (int i = 0; i < N * N; i += N)
     {
         elements[i] = counter;
-        counter += Matrix::STEP;
+        counter += step;
     }
 }
 
