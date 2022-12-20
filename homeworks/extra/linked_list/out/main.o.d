@@ -150,7 +150,10 @@ out/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc src/include/List.hpp \
- src/include/Node.hpp
+ /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc src/include/Node.hpp
 /usr/include/stdc-predef.h:
 /usr/include/c++/11/iostream:
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
@@ -337,4 +340,9 @@ out/main.o: src/main.cpp /usr/include/stdc-predef.h \
 /usr/include/c++/11/istream:
 /usr/include/c++/11/bits/istream.tcc:
 src/include/List.hpp:
+/usr/include/c++/11/fstream:
+/usr/include/c++/11/bits/codecvt.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+/usr/include/c++/11/bits/fstream.tcc:
 src/include/Node.hpp:
