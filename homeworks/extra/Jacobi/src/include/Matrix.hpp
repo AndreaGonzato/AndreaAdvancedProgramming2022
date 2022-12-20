@@ -19,7 +19,7 @@ public:
     Matrix(){};
     Matrix(int n);
     Matrix(Matrix<T> &&p);
-    Matrix<T> operator=(const Matrix<T> & m);
+    void operator=(const Matrix<T> & m);
 
     void init();
     void setBorders();
@@ -68,21 +68,19 @@ Matrix<T>::Matrix(Matrix<T> &&p)
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::operator=(const Matrix<T> & m){
-    Matrix<T> output = Matrix(m.N);
+void Matrix<T>::operator=(const Matrix<T> & m){
 
     // copy all the elements
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < N; j++)
         {
-            output.setElement(i, j, m.getElement(i, j));
+            this->setElement(i, j, m.getElement(i, j));
         }
         
     }
-    
 
-    return output;
+
 }
 
 template <typename T>

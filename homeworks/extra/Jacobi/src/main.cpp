@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Matrix.hpp"
+#include <string>
 
 
 template <typename T>
@@ -9,16 +10,16 @@ void init(Matrix<T> matrix){
 
 int main()
 {
-	Matrix<double> firstMatrix = Matrix<double>(11);
-	firstMatrix.init();
+	Matrix<double> matrix = Matrix<double>(11);
+	matrix.init();
+	matrix.print_to_file("first");
 	
-	Matrix<double> matrix = firstMatrix.calculateJacobiStep();
-	for (int i = 0; i < 999; i++)
+	for (int i = 0; i < 1000; i++)
 	{
 		matrix = matrix.calculateJacobiStep();
 	}
-	
-	matrix.print_to_file("result.txt");
+
+	matrix.print_to_file("result");
 
 
 	return 0;
